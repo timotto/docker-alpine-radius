@@ -9,9 +9,13 @@ RUN apk update && apk upgrade && \
     chgrp radius  /usr/sbin/radiusd && chmod g+rwx /usr/sbin/radiusd && \
     rm /var/cache/apk/*
 
-VOLUME \
-    /opt/db/ \
-    /etc/freeradius/certs
+VOLUME /config
+
+RUN ln -sf /config/server.pem /etc/raddb/certs/server.pem && \
+    ln -sf /config/ca.pem /etc/raddb/certs/ca.pem && \
+    ln -sf /config/dh /etc/raddb/certs/dh && \
+    ln -sf /config/clients.conf /etc/raddb/clients.conf && \
+    ln -sf /config/users /etc/raddb/mods-config/files/authorize
 
 EXPOSE \
     1812/udp \
