@@ -1,5 +1,6 @@
 FROM alpine:3.6
-MAINTAINER Marcel Maatkamp <m.maatkamp@gmail.com>
+LABEL maintainer="Tim Otto <tim@timotto.io>"
+LABEL master="Marcel Maatkamp <m.maatkamp@gmail.com>"
 
 WORKDIR /projects
 
