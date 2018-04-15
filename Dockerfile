@@ -11,7 +11,7 @@ RUN apk update && apk upgrade && \
 
 VOLUME /config
 
-RUN sed -i /etc/raddb/sites-enabled/inner-tunnel -es/'^#.*eap$'/eap/ && \
+RUN sed -i /etc/raddb/sites-enabled/inner-tunnel -es/^#.*eap$/eap/ && \
     ln -sf /config/server.pem /etc/raddb/certs/server.pem && \
     ln -sf /config/ca.pem /etc/raddb/certs/ca.pem && \
     ln -sf /config/dh /etc/raddb/certs/dh && \
