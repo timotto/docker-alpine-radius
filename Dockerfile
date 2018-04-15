@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:edge
 LABEL maintainer="Tim Otto <tim@timotto.io>"
 LABEL master="Marcel Maatkamp <m.maatkamp@gmail.com>"
 
